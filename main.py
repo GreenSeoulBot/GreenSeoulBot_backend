@@ -43,9 +43,14 @@ async def create_upload_file(file: bytes = File(...)):
 
     image = read_image(file)
     prediction = predict_image(image)
+    confidence = [float(item["confidence"].replace("%","").strip()) for item in prediction]
 
-    return prediction
-
+    print(type(confidence))
+    if confidence[0]<70:
+        return "죄송합니다. 다른 사진을 첨부해주세요."
+    
+    class_type = [item['class'] for item in prediction][0]
+    return class_type
 
 # 버튼 채팅 메시지 생성
 @app.get("/green-seoul-bot/chatbot/btn/{district_name}")

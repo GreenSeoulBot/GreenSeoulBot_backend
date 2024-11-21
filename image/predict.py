@@ -21,7 +21,7 @@ def predict_image(file: Image.Image):
     # Make predictions
     preds = model.predict(x)
 
-    result = decode_predictions(preds, top=3)[0]
+    result = decode_predictions(preds, top=1)[0]
     
     response = []
     for res in result:
