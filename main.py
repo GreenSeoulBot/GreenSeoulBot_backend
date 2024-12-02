@@ -20,11 +20,6 @@ from fastapi.responses import StreamingResponse  # 추가된 코드
 import openai
 import os
 
-# from ultralytics.yolo.utils.plotting import Annotator, colors
-
-# from sentence_transformers import SentenceTransformer
-# from qdrant_client import QdrantClient
-# from qdrant_client.http.models import VectorParams, PointStruct
 OPENAI_API_KEY = os.getenv("API-KEY")
 openai.api_key = OPENAI_API_KEY
 
@@ -51,27 +46,9 @@ def get_db():
 
 class Item(BaseModel):
     message : str
+class districtName(BaseModel):
+    district_name : str
 
-@app.get("/chatbot")
-async def root():
-    example = session.query(Test).all()
-    return example
-
-
-# @app.post("/green-seoul-bot/image")
-# async def create_upload_file(file: bytes = File(...)):
-
-#     image = read_image(file)
-#     prediction = predict_image(image)
-#     confidence = [float(item["confidence"].replace("%","").strip()) for item in prediction]
-
-#     print(type(confidence))
-#     if confidence[0]<70:
-#         return prediction
-    
-#     class_type = [item['class'] for item in prediction][0]
-    
-#     return class_type
 
 def results_to_json(results, model):
     return [
@@ -126,8 +103,9 @@ async def create_upload_file(file: UploadFile = File(...)):
     # return results.pandas().xyxy[0].to_dict(orient="records")
     
 # 버튼 채팅 메시지 생성
-@app.get("/chatbot/policy{district_name}")
-async def chat_btn(district_name: str, db: session = Depends(get_db)):
+@app.post("/chatbot/policy")
+async def chat_btn(item: districtName, db: session = Depends(get_db)):
+    district_name = item.district_name
     policy = db.query(Policy).filter(Policy.district_name == district_name).first()
 
     if policy:
