@@ -162,23 +162,6 @@ async def chat_endpoint(chat: ChatModel):
         logger.error(f"Error processing user input: {e}")
         raise HTTPException(status_code=500, detail="응답을 생성하는 중 오류가 발생했습니다.")
 
-# @app.post('/policy', response_model=dict)
-# async def policy_endpoint(policy: PolicyModel, item: districtName, db: session = Depends(get_db)):
-#     try:
-#         if not policy.district_name:
-#             raise HTTPException(status_code=400, detail="지역구 이름을 입력해주세요.")
-
-#         if not any(item["district_name"] == policy.district_name for item in district_websites):
-#             raise HTTPException(status_code=400, detail="해당 지역구의 정보를 없습니다.")
-
-#         bot_response = await get_response(policy.district_name)
-#         message = bot_response.get('answer', '')
-#         homepage_url = next(item["district_url"] for item in district_websites if item["district_name"] == policy.district_name)
-#         return {"message": message, "district_url": homepage_url}
-#     except Exception as e:
-#         logger.error(f"Error processing policy request: {e}")
-#         raise HTTPException(status_code=500, detail="정책 정보를 조회하는 중 오류가 발생했습니다.")
-
 
 # 버튼 채팅 메시지 생성
 @router.post("/policy")
