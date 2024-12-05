@@ -1,0 +1,29 @@
+{
+    "districts": [
+        { "title": "강남구", "district_url": "https://www.gangnam.go.kr" },
+        { "title": "강동구", "district_url": "https://www.gangdong.go.kr" },
+        { "title": "강북구", "district_url": "https://www.gangbuk.go.kr" },
+        { "title": "강서구", "district_url": "https://www.gangseo.seoul.kr" },
+        { "title": "관악구", "district_url": "https://www.gwanak.go.kr" },
+        { "title": "광진구", "district_url": "https://www.gwangjin.go.kr" },
+        { "title": "구로구", "district_url": "https://www.guro.go.kr" },
+        { "title": "금천구", "district_url": "https://www.geumcheon.go.kr" },
+        { "title": "노원구", "district_url": "https://www.nowon.kr" },
+        { "title": "도봉구", "district_url": "https://www.dobong.go.kr" },
+        { "title": "동대문구", "district_url": "https://www.ddm.go.kr" },
+        { "title": "동작구", "district_url": "https://www.dongjak.go.kr" },
+        { "title": "마포구", "district_url": "https://www.mapo.go.kr" },
+        { "title": "서대문구", "district_url": "https://www.sdm.go.kr" },
+        { "title": "서초구", "district_url": "https://www.seocho.go.kr" },
+        { "title": "성동구", "district_url": "https://www.sd.go.kr" },
+        { "title": "성북구", "district_url": "https://www.sb.go.kr" },
+        { "title": "송파구", "district_url": "https://www.songpa.go.kr" },
+        { "title": "양천구", "district_url": "https://www.yangcheon.go.kr" },
+        { "title": "영등포구", "district_url": "https://www.ydp.go.kr" },
+        { "title": "용산구", "district_url": "https://www.yongsan.go.kr" },
+        { "title": "은평구", "district_url": "https://www.ep.go.kr" },
+        { "title": "종로구", "district_url": "https://www.jongno.go.kr" },
+        { "title": "중구", "district_url": "https://www.junggu.seoul.kr" },
+        { "title": "중랑구", "district_url": "https://www.jungnang.go.kr" }
+    ]
+}
